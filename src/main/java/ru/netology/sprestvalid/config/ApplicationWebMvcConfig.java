@@ -7,6 +7,8 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import ru.netology.sprestvalid.model.User;
+import ru.netology.sprestvalid.model.UserAnnotation;
 
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class ApplicationWebMvcConfig implements WebMvcConfigurer {
     private static class PersonArgumentResolver implements HandlerMethodArgumentResolver{
         @Override
         public boolean supportsParameter(MethodParameter parameter) {
-            return parameter.hasParameterAnnotation(PersonController.PersonResolver.class);
+            return parameter.hasParameterAnnotation(UserAnnotation.class);
         }
 
         @Override
@@ -31,9 +33,9 @@ public class ApplicationWebMvcConfig implements WebMvcConfigurer {
 
             //возвращает значения квери парам
             String name = webRequest.getParameter("name");
-            Integer age = Integer.valueOf(webRequest.getParameter("age"));
+            String password = webRequest.getParameter("password");
 
-            return new Person(name, age);
+            return new User(name, password);
         }
     }
 }
