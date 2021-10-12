@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpRestValidApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpRestValidApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpRestValidApplication.class, args);
+    }
 
 }

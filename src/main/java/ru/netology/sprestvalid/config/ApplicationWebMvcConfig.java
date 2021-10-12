@@ -20,7 +20,7 @@ public class ApplicationWebMvcConfig implements WebMvcConfigurer {
         resolvers.add(new PersonArgumentResolver());
     }
 
-    private static class PersonArgumentResolver implements HandlerMethodArgumentResolver{
+    private static class PersonArgumentResolver implements HandlerMethodArgumentResolver {
         @Override
         public boolean supportsParameter(MethodParameter parameter) {
             return parameter.hasParameterAnnotation(UserAnnotation.class);

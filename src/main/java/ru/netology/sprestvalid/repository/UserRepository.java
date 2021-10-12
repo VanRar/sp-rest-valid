@@ -24,10 +24,10 @@ public class UserRepository {
         this.users = users;
     }
 
-    public List<Authorities> getUserAuthorities(String user, String password){
+    public List<Authorities> getUserAuthorities(String user, String password) {
         List<Authorities> list;
-        for(User u : users){
-            if(u.getUserName().equals(user) && u.getPassword().equals(password)){
+        for (User u : users) {
+            if (u.getUserName().equals(user) && u.getPassword().equals(password)) {
                 list = u.getPermission();
                 return list;
             }

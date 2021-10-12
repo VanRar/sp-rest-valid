@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.UNAUTHORIZED, reason = "not authorised")
 public class UnauthorizedUser extends RuntimeException {
-    public UnauthorizedUser(String msg){
+    public UnauthorizedUser(String msg) {
         super(msg);
     }
 }
