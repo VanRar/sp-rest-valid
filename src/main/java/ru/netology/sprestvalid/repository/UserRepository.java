@@ -7,6 +7,7 @@ import ru.netology.sprestvalid.enums.Authorities;
 import ru.netology.sprestvalid.model.User;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -25,6 +26,10 @@ public class UserRepository {
     }
 
     public List<Authorities> getUserAuthorities(String user, String password) {
+
+      //  return null;
+     //  return Arrays.asList(Authorities.values());
+
         List<Authorities> list;
         for (User u : users) {
             if (u.getUserName().equals(user) && u.getPassword().equals(password)) {

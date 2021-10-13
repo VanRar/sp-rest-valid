@@ -28,7 +28,7 @@ public class ApplicationWebMvcConfig implements WebMvcConfigurer {
 
         @Override
         public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
-                                      NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+                                      NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
 
 
             //возвращает значения квери парам

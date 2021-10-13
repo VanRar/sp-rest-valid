@@ -1,3 +1,14 @@
-POST http://localhost:8080/person?name=Ivan&age=28
+GET http://localhost:8080/authorize?user=Ivan&password=1234
+Accept: application/json
+
+###
+GET http://localhost:8080/authorize?user=Den&password=qwer
+Accept: application/json
+
+###
+POST http://localhost:8080/authorize?user=Den&password=qwer
 Content-Type: application/json
 
+###
+POST http://localhost:8080/authorize?user=Ivan&password=1234
+Content-Type: application/json

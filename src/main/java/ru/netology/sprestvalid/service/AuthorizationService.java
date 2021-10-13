@@ -1,6 +1,5 @@
 package ru.netology.sprestvalid.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.netology.sprestvalid.enums.Authorities;
 import ru.netology.sprestvalid.exceptions.InvalidCredentials;
@@ -12,11 +11,10 @@ import java.util.List;
 
 @Service
 public class AuthorizationService {
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public UserRepository getUserRepository() {
-        return userRepository;
+    public AuthorizationService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public List<Authorities> getAuthorities(String user, String password) {
@@ -26,7 +24,7 @@ public class AuthorizationService {
         List<Authorities> userAuthorities = userRepository.getUserAuthorities(user, password);
 
         if (isEmpty(userAuthorities)) {
-            throw new UnauthorizedUser("Unknown user" + user);
+            throw new UnauthorizedUser("Unknown user " + user);
         }
         return userAuthorities;
     }
