@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>ru.netology</groupId>
 	<artifactId>sp-rest-valid</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sp-rest-valid</name>
 	<description>Homework rest</description>
